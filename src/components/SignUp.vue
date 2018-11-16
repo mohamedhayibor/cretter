@@ -2,48 +2,44 @@
 	<div class="sign-up">
 		<p>Create new Cretter account</p>
 
-		<div class="sign-up-template">
-			<form class="sign-up-form">
-				<input type="text"
-					   v-model="email"
-					   placeholder="Email"><br>
+		<input type="text"
+			   v-model="email"
+			   name="email"
+			   placeholder="Email"><br>
 
-				<input type="password"
-					   v-model="password"
-		 			   placeholder="Password"><br>
+		<input type="password"
+			   v-model="password"
+			   name="password"
+ 			   placeholder="Password"><br>
 
-				<button :click="signUp">Sign Up</button>
+		<button :click="signUp">Sign Up</button>
 
-				<span>or <router-link to="/login">Login</router-link></span>
-			</form>
-		</div>
+		<span>or <router-link to="/login">Login</router-link></span>
+		
 	</div>
 </template>
 
 <script>
 	export default {
 		name: "sign-up",
-		data: {
-			email: "",
-			password: "",
+		data: function () {
+			return {
+				email: "",
+				password: ""
+			};
 		},
 		methods: {
 			signUp: function () {
 				console.log("this.email: ", this.email)
 				console.log("this.password: ", this.password)
 
-				console.log("The fuck a programmer is")
-				
+
 			}
 		}
 	}
 </script>
 
 <style scoped>
-.signUp {
-	margin-top: 40px;
-}
-
 input {
 	margin: 10px 0;
 	width: 20%;

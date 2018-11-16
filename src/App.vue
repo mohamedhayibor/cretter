@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <div>
+      <h4>From App.vue</h4>
+    </div>
+    <!-- <img src="./assets/logo.png"> -->
     <router-view/>
   </div>
 </template>

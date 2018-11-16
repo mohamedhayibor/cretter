@@ -1,9 +1,18 @@
 <template>
 	<div class="login">
 		<h3>Sign in</h3>
-		<input type="text" name="Email" placeholder="Email"><br>
-		<input type="text" name="Password" placeholder="Password"><br>
+		<input type="text"
+			   name="email"
+			   v-model="email"
+			   placeholder="Email"><br>
+
+		<input type="text"
+			   name="Password"
+			   v-model="password"
+			   placeholder="Password"><br>
+
 		<button v-on:click="login">Sign In</button>
+
 		<p>You don't have an account? <router-link to="/sign-up">Create one</router-link></p>
 	</div>
 </template>
@@ -12,7 +21,10 @@
 	export default {
 		name: 'login',
 		data: function () {
-			return {}
+			return {
+				email: "",
+				password: ""
+			};
 		},
 		methods: {
 			login: function() {
@@ -23,10 +35,6 @@
 </script>
 
 <style scoped>
-.login {
-	margin-top: 40px;
-}
-
 input {
 	margin: 10px 0;
 	width: 20%;
@@ -48,4 +56,4 @@ p a {
 	text-decoration: underline;
 	cursor: pointer;
 }
-<style>
+</style>
