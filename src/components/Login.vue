@@ -28,6 +28,10 @@
 		},
 		methods: {
 			login: function() {
+				console.log("this.email: ", this.email);
+				console.log("this.password: ", this.password);
+
+				// after successful login go back to cretters
 				this.$router.replace('cretters');
 			}
 		}

@@ -12,7 +12,7 @@
 			   name="password"
  			   placeholder="Password"><br>
 
-		<button :click="signUp">Sign Up</button>
+		<button v-on:click="signUp">Sign Up</button>
 
 		<span>or <router-link to="/login">Login</router-link></span>
 		
@@ -30,10 +30,11 @@
 		},
 		methods: {
 			signUp: function () {
-				console.log("this.email: ", this.email)
-				console.log("this.password: ", this.password)
+				console.log("this.email: ", this.email);
+				console.log("this.password: ", this.password);
 
-
+				// after successful sign-up go back to cretters
+				this.$router.replace('cretters');
 			}
 		}
 	}
@@ -55,6 +56,6 @@ button {
 span {
 	display: block;
 	margin-top: 20px;
-	font-size: 11px;
+	font-size: 13px;
 }
 </style>

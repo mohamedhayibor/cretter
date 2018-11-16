@@ -17,7 +17,9 @@
 <script>
 	export default {
 		name: "cretters",
-		data: {},
+		data: function () {
+			return {};
+		},
 		methods: {}
 	}
 </script>
