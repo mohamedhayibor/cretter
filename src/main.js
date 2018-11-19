@@ -4,7 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import firebase from 'firebase/app'
+import Vuetify from 'vuetify'
 import dotEnv from 'dotenv'
+
+// import vuetify css | comment out to get initial login css
+import 'vuetify/dist/vuetify.min.css'
 
 Vue.config.productionTip = false
 
@@ -21,6 +25,9 @@ var config = {
 };
 
 firebase.initializeApp(config);
+
+// use vuetify
+Vue.use(Vuetify);
 
 /* eslint-disable no-new */
 new Vue({
