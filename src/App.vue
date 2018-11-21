@@ -1,10 +1,22 @@
 <template>
   <div id="app">
-    <div>
-      <h4>From App.vue</h4>
-    </div>
-    <!-- <img src="./assets/logo.png"> -->
-    <router-view/>
+    <!--
+      v-app component must be parent of All Vuetify components
+
+      Hence is the root component of all app comps
+
+      fluid: to extend to its full width
+
+      Maybe later add footer, navigation bar
+    -->
+    <v-app>
+      <v-content>
+        <v-container fluid fill-height>
+          <router-view/>
+        </v-container>
+      </v-content>
+    </v-app>
+    
   </div>
 </template>
 
@@ -15,12 +27,4 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

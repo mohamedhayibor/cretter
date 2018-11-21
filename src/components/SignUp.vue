@@ -1,22 +1,32 @@
 <template>
-	<div class="sign-up">
-		<p>Create new Cretter account</p>
+	<v-layout align-center justify-center>
+		<v-flex xs12 sm8 md4>
+			<v-card class="elevation-12">
 
-		<input type="text"
-			   v-model="email"
-			   name="email"
-			   placeholder="Email"><br>
+				<v-toolbar dark color="primary">
+					<v-toolbar-title>Create an account</v-toolbar-title>
+				</v-toolbar>
 
-		<input type="password"
-			   v-model="password"
-			   name="password"
- 			   placeholder="Password"><br>
+				<v-card-text>
+					<v-form>
+						<v-text-field name="email" label="Email" type="text" v-model="email">
+						</v-text-field>
+						<v-text-field name="password" label="Password" type="password" v-model="password">
+						</v-text-field>
+					</v-form>
+				</v-card-text>
 
-		<button v-on:click="signUp">Sign Up</button>
+				<v-card-actions>
+					<!-- why is it not sliding button to the right -->
+					<s-spacer></s-spacer>
+					<v-btn name="signup" large color="primary" v-on:click="signUp">Sign Up</v-btn>
+				</v-card-actions>
 
-		<span>or <router-link to="/login">Login</router-link></span>
-		
-	</div>
+				<v-card-text>or <router-link to="/login">Login</router-link></v-card-text>
+
+			</v-card>
+		</v-flex>
+	</v-layout>
 </template>
 
 <script>
@@ -41,21 +51,4 @@
 </script>
 
 <style scoped>
-input {
-	margin: 10px 0;
-	width: 20%;
-	padding: 15px;
-}
-
-button {
-	margin-top: 20px;
-	width: 10%;
-	cursor: pointer;
-}
-
-span {
-	display: block;
-	margin-top: 20px;
-	font-size: 13px;
-}
 </style>

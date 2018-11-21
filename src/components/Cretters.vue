@@ -1,14 +1,10 @@
 <template>
 	<div class="cretters-comp">
 		<h1>How about today's Cretters</h1>
-
 		<div>
-			<ul>
-				<li>Fix email + password error</li>
-				<li>Build the <strong>statement</strong> card component</li>
-				<li>Build the <strong>question</strong> card component</li>
-				<li>Build the <strong>answer</strong> card component</li>
-			</ul>
+			<v-btn fab dark color="indigo">
+				<v-icon dark>+</v-icon>
+			</v-btn>
 		</div>
 	</div>
 </template>
@@ -25,5 +21,4 @@
 </script>
 
 <style scoped>
-	
 </style>

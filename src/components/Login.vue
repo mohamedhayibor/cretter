@@ -1,20 +1,34 @@
 <template>
-	<div class="login">
-		<h3>Sign in</h3>
-		<input type="text"
-			   name="email"
-			   v-model="email"
-			   placeholder="Email"><br>
+	<!--
+		v-spacer: to fill available space
+		or make space btw 2 components -->
 
-		<input type="text"
-			   name="Password"
-			   v-model="password"
-			   placeholder="Password"><br>
+	<v-layout align-center justify-center>
+		<v-flex xs12 sm8 md4>
+			<v-card class="elevation-12">
+				
+				<v-toolbar dark color="primary">
+					<v-toolbar-title>Login</v-toolbar-title>
+				</v-toolbar>
 
-		<button v-on:click="login">Sign In</button>
+				<v-card-text>
+					<v-form>
+						<v-text-field name="email" label="Email" type="text" v-model="email">
+						</v-text-field>
+						<v-text-field name="password" label="Password" type="password" v-model="password"></v-text-field>
+					</v-form>
+				</v-card-text>
 
-		<p>You don't have an account? <router-link to="/sign-up">Create one</router-link></p>
-	</div>
+				<v-card-actions>
+					<v-spacer></v-spacer>
+					<v-btn name="signin" large color="primary" v-on:click="login">Sign In</v-btn>
+				</v-card-actions>
+
+				<v-card-text>You don't have an account? <router-link to="/sign-up">Create one</router-link></v-card-text>
+
+			</v-card>
+		</v-flex>
+	</v-layout>
 </template>
 
 <script>
@@ -39,25 +53,4 @@
 </script>
 
 <style scoped>
-input {
-	margin: 10px 0;
-	width: 20%;
-	padding: 15px;
-}
-
-button {
-	margin-top: 20px;
-	width: 10%;
-	cursor: pointer;
-}
-
-p {
-	margin-top: 40px;
-	font-size: 13px;
-}
-
-p a {
-	text-decoration: underline;
-	cursor: pointer;
-}
 </style>
