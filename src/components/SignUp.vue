@@ -17,8 +17,9 @@
 				</v-card-text>
 
 				<v-card-actions>
-					<!-- why is it not sliding button to the right -->
-					<s-spacer></s-spacer>
+					<!-- why is it not sliding button to the right <s-spacer></s-spacer>
+					Fix later
+					-->
 					<v-btn name="signup" large color="primary" v-on:click="signUp">Sign Up</v-btn>
 				</v-card-actions>
 
