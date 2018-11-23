@@ -84,6 +84,91 @@
 						}
 					],
 					score: 0,
+					id: "43434"},
+					{statement: "More responsibility, more meaning",
+					 questions: [
+						{question: "Have you considered the wisdom: 'More is Less'?",
+						 answer: {
+						 	answer: "If you want peace of mind, probably take less responsibility",
+						 	score: 0},
+						 score: 0,
+						},
+						{question: "What if 'more' leads to neurosis and unsustainable anxiety?",
+						 answer: {
+						 	answer: "It's up to the individual to decide how much to take in, in both responsibility and meaning.",
+						 	score: 0},
+						 score: 0
+						},
+						{question: "Can anybody live with zero responsibility?",
+						 answer: {
+						 	answer: "I guess yes, but that life would be completely meaningless",
+						 	score: 0},
+						 score: 0
+						},
+						{question: "What's the maximum?",
+						 answer: {
+						 	answer: "Only God knows.",
+						 	score: 0},
+						 score: 0
+						}
+					],
+					score: 0,
+					id: "43434"},
+					{statement: "More money is more power",
+					 questions: [
+						{question: "Money can become meaningless, what if there is only a bottle of water left? Who has power?",
+						 answer: {},
+						 score: 0,
+						},
+						{question: "Can you buy authentic relationships with money?",
+						 answer: {},
+						 score: 0
+						},
+						{question: "Can you breath money, can you make love to it?",
+						 answer: {},
+						 score: 0
+						}
+					],
+					score: 0,
+					id: "43434"},
+					{statement: "Work destroys your soul by stealthily invading your brain during the hours not officially spent working; be selective about professions.",
+					 questions: [
+						{question: "you mean for only unengaging work?",
+						 answer: {},
+						 score: 0,
+						},
+						{question: "Isn't that a feature for engaging and creative work",
+						 answer: {},
+						 score: 0
+						}
+					],
+					score: 0,
+					id: "43434"},
+					{statement: "Work destroys your soul by stealthily invading your brain during the hours not officially spent working; be selective about professions. - N Taleb",
+					 questions: [
+						{question: "you mean for only unengaging work?",
+						 answer: {},
+						 score: 0,
+						},
+						{question: "Isn't that a feature for engaging and creative work",
+						 answer: {},
+						 score: 0
+						}
+					],
+					score: 0,
+					id: "43434"},
+					{statement: "If you don’t want to have a boss, you better be capable in the wild. Angela Jiang",
+					 questions: [
+						{question: "Is being able to work with others superior in this case?",
+						 answer: {},
+						 score: 0,
+						},
+						{question: "With this, how do you get off the 'one man' show mindset?",
+						 answer: {},
+						 score: 0
+						}
+					],
+					score: 0,
 					id: "43434"}
 				]
 			};
