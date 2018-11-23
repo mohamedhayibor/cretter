@@ -1,5 +1,4 @@
 <template>
-
 	<!-- Test on statement display -->
 	<div>
 		<div class="cretters-comp">
@@ -10,13 +9,12 @@
 		</div>
 		<v-timeline>
 			<v-timeline-item
-				v-for="n in 13"
+				v-for="n in 4"
 				:key="n"
 				color="red lighten-2"
 				large>
 
 				<span slot="opposite">Username</span>
-				<!--  --> 
 
 				<v-dialog v-model="dialog" width="600px">
 					<a slot="activator" color="primary" dark>
@@ -36,15 +34,18 @@
 							- Hypothesis: users can judge the quality of a question at a glance
 						-->
 
-				        <v-card-title>
-				        	<ul>
-				        		<li>Example question? Example question? Example question?</li>
-				        		<li>Example question? Example question? Example question?</li>
-				        		<li>Example question? Example question? Example question?</li>
-				        		<li>Example question? Example question? Example question?</li>
-				        	</ul>
-				        	
-				        </v-card-title>
+				        <v-list>
+				        	<template v-for="(question, index) in cretters[0].questions">
+
+				        		<!-- display for asked questions -->
+				        		<v-list-tile :key="index" avatar ripple @click="">
+					        		<v-list-tile-content>
+					        			<v-list-tile-sub-title> {{question.question}}</v-list-tile-sub-title>
+					        		</v-list-tile-content>
+					        	</v-list-tile>
+
+				        	</template>
+				        </v-list>
 				    </v-card>
 				</v-dialog>
 			</v-timeline-item>
