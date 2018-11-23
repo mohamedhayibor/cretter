@@ -56,8 +56,36 @@
 <script>
 	export default {
 		name: "cretters",
-		data: function () {
-			return {};
+		data () {
+			return {
+				// dummy static API will surely change
+				// statement, questions, answers have score that proxies a user's rep
+				cretters: [
+					{statement: "Ideas are worthless! Implementation is everything!",
+					 questions: [
+						{question: "Are all ideas equally worthless?",
+						 answer: {
+						 	answer: "Some are way better than others, the emphasis here is in implementation",
+						 	score: 0},
+						 score: 0,
+						},
+						{question: "Is there a possibility that some have different degree of worthiness than others?",
+						 answer: {
+						 	answer: "Yes, the emphasis again is on implementation",
+						 	score: 0},
+						 score: 0
+						},
+						{question: "How about hustling hard on bad ideas?",
+						 answer: {
+						 	answer: "You will surely waste your time",
+						 	score: 0},
+						 score: 0
+						}
+					],
+					score: 0,
+					id: "43434"}
+				]
+			};
 		},
 		methods: {}
 	}
