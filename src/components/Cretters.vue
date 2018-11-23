@@ -9,18 +9,17 @@
 		</div>
 		<v-timeline>
 			<v-timeline-item
-				v-for="n in 4"
-				:key="n"
+				v-for="(cretter, id) in cretters"
+				:key="id"
 				color="red lighten-2"
 				large>
 
-				<span slot="opposite">Username</span>
+				<span slot="opposite">{{cretter.username}}</span>
 
 				<v-dialog v-model="dialog" width="600px">
 					<a slot="activator" color="primary" dark>
 						<v-card class="elevation-2">
-							<v-card-text> <strong> Statetement
-								Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at</strong>
+							<v-card-text> <strong>{{ cretter.statement }}</strong>
 							</v-card-text>
 						</v-card>
 					</a>
@@ -35,7 +34,7 @@
 						-->
 
 				        <v-list>
-				        	<template v-for="(question, index) in cretters[0].questions">
+				        	<template v-for="(question, index) in cretter.questions">
 
 				        		<!-- display for asked questions -->
 				        		<v-list-tile :key="index" avatar ripple @click="">
@@ -63,6 +62,7 @@
 				// statement, questions, answers have score that proxies a user's rep
 				cretters: [
 					{statement: "Ideas are worthless! Implementation is everything!",
+					 username: "Startup Guru",
 					 questions: [
 						{question: "Are all ideas equally worthless?",
 						 answer: {
@@ -86,6 +86,7 @@
 					score: 0,
 					id: "43434"},
 					{statement: "More responsibility, more meaning",
+					 username: "Jordan Peterson",
 					 questions: [
 						{question: "Have you considered the wisdom: 'More is Less'?",
 						 answer: {
@@ -115,6 +116,7 @@
 					score: 0,
 					id: "43434"},
 					{statement: "More money is more power",
+					 username: "Clueless Idiot",
 					 questions: [
 						{question: "Money can become meaningless, what if there is only a bottle of water left? Who has power?",
 						 answer: {},
@@ -132,6 +134,7 @@
 					score: 0,
 					id: "43434"},
 					{statement: "Work destroys your soul by stealthily invading your brain during the hours not officially spent working; be selective about professions.",
+					 username: "N Taleb",
 					 questions: [
 						{question: "you mean for only unengaging work?",
 						 answer: {},
@@ -144,20 +147,22 @@
 					],
 					score: 0,
 					id: "43434"},
-					{statement: "Work destroys your soul by stealthily invading your brain during the hours not officially spent working; be selective about professions. - N Taleb",
+					{statement: "Probably, the most important part in overcoming overgeneralizing, is to persist in questioning your assumptions and shifting your awareness",
+					 username: "Manisha Agarwal",
 					 questions: [
-						{question: "you mean for only unengaging work?",
+						{question: "Is good, or true enough, enough?",
 						 answer: {},
 						 score: 0,
 						},
-						{question: "Isn't that a feature for engaging and creative work",
+						{question: "Is awareness the most important thing here?",
 						 answer: {},
 						 score: 0
 						}
 					],
 					score: 0,
 					id: "43434"},
-					{statement: "If you don’t want to have a boss, you better be capable in the wild. Angela Jiang",
+					{statement: "If you don’t want to have a boss, you better be capable in the wild.",
+					 username: "Angela Jiang",
 					 questions: [
 						{question: "Is being able to work with others superior in this case?",
 						 answer: {},
