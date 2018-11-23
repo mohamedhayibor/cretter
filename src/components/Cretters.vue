@@ -8,11 +8,14 @@
 						box
 						name="cretter-input"
 						label="Submit a statement"
+						v-model="newStatement"
 						value="">
 					</v-textarea>
 				</v-flex>
 
-				<v-btn fab dark color="indigo">
+				<v-btn fab dark color="indigo"
+				v-on:click="addNewStatement"
+				>
 					<v-icon dark>+</v-icon>
 				</v-btn>
 			
@@ -66,10 +69,26 @@
 <script>
 	export default {
 		name: "cretters",
+		methods: {
+			addNewStatement() {
+				console.log(">>>>: ", this.newStatement);
+
+				this.cretters.push({
+					id: 0,
+					score: 0,
+					username: "Anonymous",
+					statement: this.newStatement,
+					questions: []
+				});
+
+				this.newStatement = "";
+			}
+		},
 		data () {
 			return {
 				// dummy static API will surely change
 				// statement, questions, answers have score that proxies a user's rep
+				newStatement: '',
 				cretters: [
 					{statement: "Ideas are worthless! Implementation is everything!",
 					 username: "Startup KnowItAll",
@@ -219,8 +238,7 @@
 					id: "43434"},
 				]
 			};
-		},
-		methods: {}
+		}
 	}
 </script>
 
