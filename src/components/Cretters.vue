@@ -2,10 +2,20 @@
 	<!-- Test on statement display -->
 	<div>
 		<div class="cretters-comp">
-			<h1>How about today's Cretters</h1>
-			<v-btn fab dark color="indigo">
-				<v-icon dark>+</v-icon>
-			</v-btn>
+			<h1>How about today's Cretters?</h1>
+				<v-flex xs6>
+					<v-textarea
+						box
+						name="cretter-input"
+						label="Submit a statement"
+						value="">
+					</v-textarea>
+				</v-flex>
+
+				<v-btn fab dark color="indigo">
+					<v-icon dark>+</v-icon>
+				</v-btn>
+			
 		</div>
 		<v-timeline>
 			<v-timeline-item
@@ -62,7 +72,7 @@
 				// statement, questions, answers have score that proxies a user's rep
 				cretters: [
 					{statement: "Ideas are worthless! Implementation is everything!",
-					 username: "Startup Guru",
+					 username: "Startup KnowItAll",
 					 questions: [
 						{question: "Are all ideas equally worthless?",
 						 answer: {
@@ -174,7 +184,39 @@
 						}
 					],
 					score: 0,
-					id: "43434"}
+					id: "43434"},
+					{statement: "The more demanding, within the bounds of reason, gets the most respect and attention.",
+					 username: "Moooooo",
+					 questions: [
+						{question: "What about the suddle art of not being a pain in the butt?",
+						 answer: {},
+						 score: 0,
+						},
+						{question: "Does more demanding fit with the advice of being kind?",
+						 answer: {},
+						 score: 0
+						}
+					],
+					score: 0,
+					id: "43434"},
+					{statement: "Coffee is dead, long live dark chocolates and tea",
+					 username: "Moooooo",
+					 questions: [
+						{question: "Aren't that just different ways of consuming caffeine?",
+						 answer: {},
+						 score: 0,
+						},
+						{question: "What's the striking advantage of mixing dark chocolates and tea?",
+						 answer: {},
+						 score: 0
+						},
+						{question: "How about just eliminating caffeine altogether?",
+						 answer: {},
+						 score: 0
+						}
+					],
+					score: 0,
+					id: "43434"},
 				]
 			};
 		},
