@@ -46,9 +46,9 @@
 							- Hypothesis: users can judge the quality of a question at a glance
 						-->
 
+						<!-- list of questions -->
 				        <v-list>
 				        	<template v-for="(question, index) in cretter.questions">
-
 				        		<!-- display for asked questions -->
 				        		<v-list-tile :key="index" avatar ripple @click="">
 					        		<v-list-tile-content>
@@ -58,6 +58,14 @@
 
 				        	</template>
 				        </v-list>
+
+				        <!-- divider -->
+				        <v-toolbar color="blue lighten-4">
+							<v-flex>
+								<v-text-field label="Ask a question"></v-text-field>
+							</v-flex>
+						</v-toolbar>
+
 				    </v-card>
 				</v-dialog>
 			</v-timeline-item>
