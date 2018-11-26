@@ -22,8 +22,8 @@
 		</div>
 		<v-timeline>
 			<v-timeline-item
-				v-for="(cretter, id) in cretters"
-				:key="id"
+				v-for="(cretter, cretterId) in cretters"
+				:key="cretterId"
 				color="red lighten-2"
 				large>
 
@@ -44,13 +44,14 @@
 								2. Clicking checkmark or crossmark to approve or reject
 
 							- Hypothesis: users can judge the quality of a question at a glance
+							avatar ripple
 						-->
 
 						<!-- list of questions -->
 				        <v-list>
 				        	<template v-for="(question, index) in cretter.questions">
 				        		<!-- display for asked questions -->
-				        		<v-list-tile :key="index" avatar ripple @click="">
+				        		<v-list-tile :key="index">
 					        		<v-list-tile-content>
 					        			<v-list-tile-sub-title> {{question.question}}</v-list-tile-sub-title>
 					        		</v-list-tile-content>
@@ -60,11 +61,13 @@
 				        </v-list>
 
 				        <!-- divider -->
-				        <v-toolbar color="blue lighten-4">
-							<v-flex>
-								<v-text-field label="Ask a question"></v-text-field>
-							</v-flex>
-						</v-toolbar>
+				        <form v-on:submit.prevent>
+					        <v-toolbar color="blue lighten-4">
+								<v-flex>
+									<v-text-field label="Ask a question" v-model="newQuestion" v-on:keyup.13="addNewQuestion(cretterId, $event)"></v-text-field>
+								</v-flex>
+							</v-toolbar>
+						</form>
 
 				    </v-card>
 				</v-dialog>
@@ -78,9 +81,21 @@
 	export default {
 		name: "cretters",
 		methods: {
-			addNewStatement() {
-				console.log(">>>>: ", this.newStatement);
+			addNewQuestion(cretterId, event) {
+				if (event) {
+					event.preventDefault();	
+				}
+				
 
+				this.cretters[cretterId].questions.push({
+					question: this.newQuestion,
+					answer: {},
+					score: 0
+				});
+
+				this.newQuestion = '';
+			},
+			addNewStatement() {
 				this.cretters.push({
 					id: 0,
 					score: 0,
@@ -97,6 +112,7 @@
 				// dummy static API will surely change
 				// statement, questions, answers have score that proxies a user's rep
 				newStatement: '',
+				newQuestion: '',
 				cretters: [
 					{statement: "Ideas are worthless! Implementation is everything!",
 					 username: "Startup KnowItAll",
