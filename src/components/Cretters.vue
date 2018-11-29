@@ -3,23 +3,22 @@
 	<div>
 		<div class="cretters-comp">
 			<h1>How about today's Cretters?</h1>
-				<v-flex xs6>
-					<v-textarea
-						box
-						name="cretter-input"
-						label="Submit a statement"
-						v-model="newStatement"
-						value="">
-					</v-textarea>
-				</v-flex>
-
-				<v-btn fab dark color="indigo"
-				v-on:click="addNewStatement"
-				>
-					<v-icon dark>+</v-icon>
-				</v-btn>
 			
+			<v-flex xs6>
+				<v-textarea
+					box
+					name="cretter-input"
+					label="Submit a statement"
+					v-model="newStatement"
+					value="">
+				</v-textarea>
+			</v-flex>
+
+			<v-btn fab dark color="indigo" v-on:click="addNewStatement">
+				<v-icon dark>+</v-icon>
+			</v-btn>
 		</div>
+
 		<v-timeline>
 			<v-timeline-item
 				v-for="(cretter, cretterId) in cretters"
@@ -47,16 +46,14 @@
 							avatar ripple
 						-->
 
-						<!-- list of questions -->
+						<!-- display for asked questions -->
 				        <v-list>
 				        	<template v-for="(question, index) in cretter.questions">
-				        		<!-- display for asked questions -->
 				        		<v-list-tile :key="index">
 					        		<v-list-tile-content>
 					        			<v-list-tile-sub-title> {{question.question}}</v-list-tile-sub-title>
 					        		</v-list-tile-content>
 					        	</v-list-tile>
-
 				        	</template>
 				        </v-list>
 
@@ -64,11 +61,14 @@
 				        <form v-on:submit.prevent>
 					        <v-toolbar color="blue lighten-4">
 								<v-flex>
-									<v-text-field label="Ask a question" v-model="newQuestion" v-on:keyup.13="addNewQuestion(cretterId, $event)"></v-text-field>
+									<v-text-field
+										label="Ask a question"
+										v-model="newQuestion"
+										v-on:keyup.13.prevent="addNewQuestion(cretterId)">	
+									</v-text-field>
 								</v-flex>
 							</v-toolbar>
 						</form>
-
 				    </v-card>
 				</v-dialog>
 			</v-timeline-item>
@@ -81,12 +81,7 @@
 	export default {
 		name: "cretters",
 		methods: {
-			addNewQuestion(cretterId, event) {
-				if (event) {
-					event.preventDefault();	
-				}
-				
-
+			addNewQuestion(cretterId) {
 				this.cretters[cretterId].questions.push({
 					question: this.newQuestion,
 					answer: {},
