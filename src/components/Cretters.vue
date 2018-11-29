@@ -29,7 +29,7 @@
 
 				<span slot="opposite">{{cretter.username}}</span>
 
-				<v-dialog v-model="dialog" width="600px">
+				<v-dialog width="600px">
 					<a slot="activator" color="primary" dark>
 						<v-card class="elevation-2">
 							<v-card-text> <strong>{{ cretter.statement }}</strong>
