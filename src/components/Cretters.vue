@@ -1,22 +1,33 @@
 <template>
 	<div>
-		<div class="cretters-comp">
-			<h1>How about today's Cretters?</h1>
-			
-			<v-flex xs6>
-				<v-textarea
-					box
-					name="cretter-input"
-					label="Submit a statement"
-					:rules="statementRules"
-					v-model="newStatement"
-					value="">
-				</v-textarea>
-			</v-flex>
+		<div class="submitACretterMsg">
+			<v-layout align-center justify-center>
+				<h1>Submit a cretter</h1>
+			</v-layout>
+		</div>
 
-			<v-btn fab dark color="indigo" v-on:click="addNewStatement">
-				<v-icon dark>+</v-icon>
-			</v-btn>
+		<div class="cretters-comp">
+			<v-layout align-center justify-center>
+				<v-flex xs6>
+					<v-textarea
+						box
+						name="cretter-input"
+						label="Submit a statement"
+						:rules="statementRules"
+						v-model="newStatement"
+						v-on:keyup.13.prevent="addNewStatement"
+						value="">
+					</v-textarea>
+				</v-flex>
+			</v-layout>
+		</div>
+
+		<br>
+
+		<div class="greeting">
+			<v-layout align-center justify-center>
+				<h1>How about today's Cretters?</h1>
+			</v-layout>
 		</div>
 
 		<v-timeline>
