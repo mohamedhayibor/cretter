@@ -121,12 +121,12 @@
 				newStatement: '',
 				newQuestion: '',
 				questionRules: [
-					v => !!v || "A question is required",
+					v => !!v || "A question cannot be empty",
 					v => v.length <= 130 || "Questions must be 130 characters or less", 
 					v => v.endsWith('?') || "Questions must end with a question mark"
 				],
 				statementRules: [
-					v => !!v || "Submit a new statement",
+					v => !!v || "A statement cannot be empty",
 					v => v.length <= 220 || "Statements must be 220 characters or less"
 				],
 				cretters: [
