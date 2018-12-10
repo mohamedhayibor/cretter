@@ -1,5 +1,4 @@
 <template>
-	<!-- Test on statement display -->
 	<div>
 		<div class="cretters-comp">
 			<h1>How about today's Cretters?</h1>
@@ -9,6 +8,7 @@
 					box
 					name="cretter-input"
 					label="Submit a statement"
+					:rules="statementRules"
 					v-model="newStatement"
 					value="">
 				</v-textarea>
@@ -63,6 +63,7 @@
 								<v-flex>
 									<v-text-field
 										label="Ask a question"
+										:rules="questionRules"
 										v-model="newQuestion"
 										v-on:keyup.13.prevent="addNewQuestion(cretterId)">	
 									</v-text-field>
@@ -83,7 +84,7 @@
 		methods: {
 			addNewQuestion(cretterId) {
 				this.cretters[cretterId].questions.push({
-					question: this.newQuestion,
+					question: this.newQuestion.trim(),
 					answer: {},
 					score: 0
 				});
@@ -95,7 +96,7 @@
 					id: 0,
 					score: 0,
 					username: "Anonymous",
-					statement: this.newStatement,
+					statement: this.newStatement.trim(),
 					questions: []
 				});
 
@@ -108,6 +109,15 @@
 				// statement, questions, answers have score that proxies a user's rep
 				newStatement: '',
 				newQuestion: '',
+				questionRules: [
+					v => !!v || "A question is required",
+					v => v.length <= 130 || "Questions must be 130 characters or less", 
+					v => v.endsWith('?') || "Questions must end with a question mark"
+				],
+				statementRules: [
+					v => !!v || "Submit a new statement",
+					v => v.length <= 220 || "Statements must be 220 characters or less"
+				],
 				cretters: [
 					{statement: "Ideas are worthless! Implementation is everything!",
 					 username: "Startup KnowItAll",
