@@ -29,9 +29,9 @@ firebase.initializeApp(config);
 // use vuetify
 Vue.use(Vuetify);
 
-var cretterApp = new Vue({
+let cretterApp = new Vue({
   el: '#app',
   router,
   components: { App },
   template: '<App/>'
-})
+});
