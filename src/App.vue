@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <!--
       v-app component must be parent of All Vuetify components
 

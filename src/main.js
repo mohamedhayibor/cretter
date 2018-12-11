@@ -29,8 +29,7 @@ firebase.initializeApp(config);
 // use vuetify
 Vue.use(Vuetify);
 
-/* eslint-disable no-new */
-new Vue({
+var cretterApp = new Vue({
   el: '#app',
   router,
   components: { App },

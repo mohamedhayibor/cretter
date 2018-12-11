@@ -94,24 +94,39 @@
 		name: "cretters",
 		methods: {
 			addNewQuestion(cretterId) {
-				this.cretters[cretterId].questions.push({
-					question: this.newQuestion.trim(),
-					answer: {},
-					score: 0
-				});
+				// only submit qualifying questions
+				if (this.newQuestion.trim() >= 13 &&
+					this.newQuestion.trim() <= 130 &&
+					this.newQuestion.trim().endsWith('?')) {
+					this.cretters[cretterId].questions.push({
+						question: this.newQuestion.trim(),
+						answer: {},
+						score: 0
+					});
 
-				this.newQuestion = '';
+					// increase statement's score
+
+					this.cretters[cretterId].score++;
+
+					this.newQuestion = '';
+				}
+					
 			},
 			addNewStatement() {
-				this.cretters.push({
-					id: 0,
-					score: 0,
-					username: "Anonymous",
-					statement: this.newStatement.trim(),
-					questions: []
-				});
+				// dont submit too short or too long, empty statements
+				if (this.newStatement.trim().length >= 13 &&
+					this.newStatement.trim().length <= 220) {
+					this.cretters.push({
+						id: 0,
+						score: 0,
+						username: "Anonymous",
+						statement: this.newStatement.trim(),
+						questions: []
+					});
 
-				this.newStatement = "";
+					this.newStatement = "";	
+				}
+				
 			}
 		},
 		data () {
@@ -122,11 +137,13 @@
 				newQuestion: '',
 				questionRules: [
 					v => !!v || "A question cannot be empty",
+					v => v.length >= 13 || "A question must be 13 characters or more",
 					v => v.length <= 130 || "Questions must be 130 characters or less", 
 					v => v.endsWith('?') || "Questions must end with a question mark"
 				],
 				statementRules: [
 					v => !!v || "A statement cannot be empty",
+					v => v.length >= 13 || "Statements must be 13 characters or more",
 					v => v.length <= 220 || "Statements must be 220 characters or less"
 				],
 				cretters: [
