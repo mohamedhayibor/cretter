@@ -94,10 +94,11 @@
 		name: "cretters",
 		methods: {
 			addNewQuestion(cretterId) {
-				// only submit qualifying questions
-				if (this.newQuestion.trim() >= 13 &&
-					this.newQuestion.trim() <= 130 &&
+				// only submit qualifying question
+				if (this.newQuestion.trim().length >= 13 &&
+					this.newQuestion.trim().length < 131 &&
 					this.newQuestion.trim().endsWith('?')) {
+
 					this.cretters[cretterId].questions.push({
 						question: this.newQuestion.trim(),
 						answer: {},
@@ -105,12 +106,10 @@
 					});
 
 					// increase statement's score
-
 					this.cretters[cretterId].score++;
 
 					this.newQuestion = '';
 				}
-					
 			},
 			addNewStatement() {
 				// dont submit too short or too long, empty statements
