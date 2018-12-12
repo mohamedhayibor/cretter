@@ -1,9 +1,6 @@
 # ignore env vars
 .env
 
-# ignore build
-build/
-
 .DS_Store
 node_modules/
 /dist/
