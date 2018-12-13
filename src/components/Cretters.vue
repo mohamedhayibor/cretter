@@ -42,9 +42,15 @@
 				<v-dialog width="600px">
 					<a slot="activator" color="primary" dark>
 						<v-card class="elevation-2">
-							<v-card-text> <strong>{{ cretter.statement }}</strong>
+							<v-card-text>
+								<strong>{{ cretter.statement }}</strong>
 							</v-card-text>
+
 						</v-card>
+
+						<v-badge color="blue">
+							<span slot="badge">{{ cretter.questions.length }}</span>
+						</v-badge>
 					</a>
 
 					<v-card>
