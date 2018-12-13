@@ -45,10 +45,6 @@
 							<v-card-text> <strong>{{ cretter.statement }}</strong>
 							</v-card-text>
 						</v-card>
-
-						<v-badge color="blue">
-							<span slot="badge">{{ cretter.questions.length }}</span>
-						</v-badge>
 					</a>
 
 					<v-card>
